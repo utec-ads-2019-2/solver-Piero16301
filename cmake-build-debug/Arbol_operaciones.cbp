@@ -80,10 +80,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/piero/Downloads/solver-Piero16301/ExpressionTree.cpp">
+		<Unit filename="C:/Users/piero/Downloads/solver-Piero16301/Evaluador.h">
 			<Option target="Arbol_operaciones"/>
 		</Unit>
 		<Unit filename="C:/Users/piero/Downloads/solver-Piero16301/ExpressionTree.h">
+			<Option target="Arbol_operaciones"/>
+		</Unit>
+		<Unit filename="C:/Users/piero/Downloads/solver-Piero16301/Operations.h">
 			<Option target="Arbol_operaciones"/>
 		</Unit>
 		<Unit filename="C:/Users/piero/Downloads/solver-Piero16301/main.cpp">

@@ -6,7 +6,33 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/piero/Downloads/solver-Piero16301/Evaluador.h
+cassert
+-
+stdexcept
+-
+iostream
+-
+list
+-
+ExpressionTree.h
+C:/Users/piero/Downloads/solver-Piero16301/ExpressionTree.h
+Operations.h
+C:/Users/piero/Downloads/solver-Piero16301/Operations.h
+
+C:/Users/piero/Downloads/solver-Piero16301/ExpressionTree.h
+
+C:/Users/piero/Downloads/solver-Piero16301/Operations.h
+cmath
+-
+ExpressionTree.h
+C:/Users/piero/Downloads/solver-Piero16301/ExpressionTree.h
+
 C:/Users/piero/Downloads/solver-Piero16301/main.cpp
 iostream
 -
+ExpressionTree.h
+C:/Users/piero/Downloads/solver-Piero16301/ExpressionTree.h
+Evaluador.h
+C:/Users/piero/Downloads/solver-Piero16301/Evaluador.h
 

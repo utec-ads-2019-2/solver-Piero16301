@@ -122,33 +122,6 @@ Arbol_operaciones/fast:
 	$(MAKE) -f CMakeFiles\Arbol_operaciones.dir\build.make CMakeFiles/Arbol_operaciones.dir/build
 .PHONY : Arbol_operaciones/fast
 
-ExpressionTree.obj: ExpressionTree.cpp.obj
-
-.PHONY : ExpressionTree.obj
-
-# target to build an object file
-ExpressionTree.cpp.obj:
-	$(MAKE) -f CMakeFiles\Arbol_operaciones.dir\build.make CMakeFiles/Arbol_operaciones.dir/ExpressionTree.cpp.obj
-.PHONY : ExpressionTree.cpp.obj
-
-ExpressionTree.i: ExpressionTree.cpp.i
-
-.PHONY : ExpressionTree.i
-
-# target to preprocess a source file
-ExpressionTree.cpp.i:
-	$(MAKE) -f CMakeFiles\Arbol_operaciones.dir\build.make CMakeFiles/Arbol_operaciones.dir/ExpressionTree.cpp.i
-.PHONY : ExpressionTree.cpp.i
-
-ExpressionTree.s: ExpressionTree.cpp.s
-
-.PHONY : ExpressionTree.s
-
-# target to generate assembly for a file
-ExpressionTree.cpp.s:
-	$(MAKE) -f CMakeFiles\Arbol_operaciones.dir\build.make CMakeFiles/Arbol_operaciones.dir/ExpressionTree.cpp.s
-.PHONY : ExpressionTree.cpp.s
-
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -185,9 +158,6 @@ help:
 	@echo ... Arbol_operaciones
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... ExpressionTree.obj
-	@echo ... ExpressionTree.i
-	@echo ... ExpressionTree.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

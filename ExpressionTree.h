@@ -3,14 +3,16 @@
 
 class Expresion {
 public:
-    virtual int operator()() const = 0;
+    virtual double operator()() const = 0;
     virtual ~Expresion() = default;
 };
 
 class Numero : public Expresion {
+public:
     int valor;
-    Numero(const int valor = 0) : valor(valor) {}
-    int operator()() const {
+    explicit Numero(const int valor = 0) : valor(valor) {}
+
+    double operator()() const override {
         return valor;
     }
 };
@@ -20,7 +22,7 @@ public:
     Expresion* left;
     Expresion* right;
 
-    ArbolExpresion(Expresion* const left = 0, Expresion* const right = 0) : left(left), right(right) {}
+    explicit ArbolExpresion(Expresion* const left = nullptr, Expresion* const right = nullptr) : left(left), right(right) {}
 };
 
 #endif //ARBOL_OPERACIONES_EXPRESSIONTREE_H
