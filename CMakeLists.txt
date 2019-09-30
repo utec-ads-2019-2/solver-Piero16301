@@ -3,4 +3,4 @@ project(Arbol_operaciones)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Arbol_operaciones main.cpp)
+add_executable(Arbol_operaciones main.cpp ExpressionTree.h ExpressionTree.cpp)

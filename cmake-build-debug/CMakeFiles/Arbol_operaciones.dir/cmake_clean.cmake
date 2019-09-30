@@ -1,8 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Arbol_operaciones.dir/main.cpp.obj"
-  "Arbol_operaciones.pdb"
   "Arbol_operaciones.exe"
   "Arbol_operaciones.exe.manifest"
+  "Arbol_operaciones.pdb"
+  "CMakeFiles/Arbol_operaciones.dir/ExpressionTree.cpp.obj"
+  "CMakeFiles/Arbol_operaciones.dir/main.cpp.obj"
   "libArbol_operaciones.dll.a"
 )
 
