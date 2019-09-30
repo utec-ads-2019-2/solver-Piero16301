@@ -65,18 +65,33 @@ private:
 
     Expresion* evaluarFactores(const char* &s) {
         assert("Evaluar factores" && s);
-        Expresion* left = evaluarOperadores(s);
+        Expresion* left = evaluarExponente(s);
         while (*s) {
             if (*s == '*') {
                 s++;
-                Expresion* right = evaluarOperadores(s);
+                Expresion* right = evaluarExponente(s);
                 left = new Multiplicacion(left, right);
                 continue;
             }
             else if (*s == '/') {
                 s++;
-                Expresion* right = evaluarOperadores(s);
+                Expresion* right = evaluarExponente(s);
                 left = new Division(left, right);
+                continue;
+            }
+            return left;
+        }
+        return left;
+    };
+
+    Expresion* evaluarExponente(const char* &s) {
+        assert("Evaluar exponente" && s);
+        Expresion* left = evaluarOperadores(s);
+        while (*s) {
+            if (*s == '^') {
+                s++;
+                Expresion* right = evaluarOperadores(s);
+                left = new Potencia(left, right);
                 continue;
             }
             return left;
