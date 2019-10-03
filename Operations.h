@@ -4,6 +4,8 @@
 #include <cmath>
 #include "ExpressionTree.h"
 
+int contador = 1;
+
 struct Suma : public ArbolExpresion {
     Suma(Expresion* const left, Expresion* const right) : ArbolExpresion(left, right) {}
 

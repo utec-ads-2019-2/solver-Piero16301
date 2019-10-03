@@ -7,13 +7,9 @@
 #IncludeRegexTransform: 
 
 C:/Users/piero/Downloads/solver-Piero16301/Evaluador.h
-cassert
--
-stdexcept
--
 iostream
 -
-list
+map
 -
 ExpressionTree.h
 C:/Users/piero/Downloads/solver-Piero16301/ExpressionTree.h

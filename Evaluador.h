@@ -1,19 +1,18 @@
 #ifndef ARBOL_OPERACIONES_EVALUADOR_H
 #define ARBOL_OPERACIONES_EVALUADOR_H
 
-#include <cassert>
-#include <stdexcept>
 #include <iostream>
-#include <list>
+#include <map>
 
 #include "ExpressionTree.h"
 #include "Operations.h"
+
+std::map <char, int> variables;
 
 class Evaluador {
 private:
 
     static Expresion* evaluarNumero(const char* &s) {
-        assert("Evaluar digito" && s && std::isdigit(*s));
         auto* numero = new Numero(0);
         while (*s && std::isdigit(*s)) {
             numero->valor = numero->valor * 10 + *s++ - '0';
@@ -21,10 +20,26 @@ private:
         return numero;
     };
 
+    static Expresion* evaluarVariable(const char* &s) {
+        auto* numero = new Numero(0);
+        while (*s && std::isalpha(*s)) {
+            if (variables.find(*s) != variables.end()) {
+                numero->valor = variables[*s];
+            } else {
+                int valorVariable;
+                std::cout << "Ingrese el valor de la variable " << *s << ": ";
+                std::cin >> valorVariable;
+                variables[*s] = valorVariable;
+                numero->valor = variables[*s];
+            }
+            s++;
+        }
+        return numero;
+    }
+
     Expresion* evaluarOperadores(const char* &s) {
-        assert("Evaluar parentesis" && s);
         if (*s == 0) {
-            throw std::invalid_argument("No existe la expresion");
+            throw std::invalid_argument("Expresion vacia");
         }
         else if (*s == '(') {
             s++;
@@ -39,11 +54,14 @@ private:
             Expresion* expresion = evaluarNumero(s);
             return expresion;
         }
+        else if (std::isalpha(*s)) {
+            Expresion* expresion = evaluarVariable(s);
+            return expresion;
+        }
         throw std::invalid_argument("Caracter no valido");
     };
 
     Expresion* evaluarSumandos(const char* &s) {
-        assert("Evaluar sumandos" && s);
         Expresion* left = evaluarFactores(s);
         while (*s) {
             if (*s == '+') {
@@ -64,7 +82,6 @@ private:
     };
 
     Expresion* evaluarFactores(const char* &s) {
-        assert("Evaluar factores" && s);
         Expresion* left = evaluarExponente(s);
         while (*s) {
             if (*s == '*') {
@@ -85,7 +102,6 @@ private:
     };
 
     Expresion* evaluarExponente(const char* &s) {
-        assert("Evaluar exponente" && s);
         Expresion* left = evaluarOperadores(s);
         while (*s) {
             if (*s == '^') {
